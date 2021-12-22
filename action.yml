@@ -1,0 +1,21 @@
+name: "Install dependencies using Poetry"
+author: "@Steffo99"
+description: "An action to install Python dependencies using Poetry."
+branding:
+  icon: "truck"
+  color: "#008cdb"
+  
+outputs:
+  pyenv:
+    description: "The location of the created Python environment."
+
+steps:
+  - name: "Setup Poetry"
+    uses: abatilo/actions-poetry@v2.1.4
+
+  - name: "Install dependencies using Poetry"
+    run: poetry install --no-interaction
+
+  - name: "Find Poetry Python environment"
+    run: echo "::set-output name=pyenv::$(poetry env list --full-path | cut -f1 -d' ')/bin"
+    shell: bash
