@@ -10,11 +10,14 @@ outputs:
     description: "The location of the created Python environment."
     value: ${{ steps.find.outputs.pyenv }}
 
-steps:
-  - name: "Install dependencies using Poetry"
-    run: poetry install --no-interaction
+runs:
+  using: composite
+  
+  steps:
+    - name: "Install dependencies using Poetry"
+      run: poetry install --no-interaction
 
-  - name: "Find Poetry Python environment"
-    id: "find"
-    run: echo "::set-output name=pyenv::$(poetry env list --full-path | cut -f1 -d' ')/bin"
-    shell: bash
+    - name: "Find Poetry Python environment"
+      id: "find"
+      run: echo "::set-output name=pyenv::$(poetry env list --full-path | cut -f1 -d' ')/bin"
+      shell: bash
