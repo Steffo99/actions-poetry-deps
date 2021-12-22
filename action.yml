@@ -10,9 +10,6 @@ outputs:
     description: "The location of the created Python environment."
 
 steps:
-  - name: "Setup Poetry"
-    uses: abatilo/actions-poetry@v2.1.4
-
   - name: "Install dependencies using Poetry"
     run: poetry install --no-interaction
 
