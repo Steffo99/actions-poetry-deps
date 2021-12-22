@@ -16,6 +16,7 @@ runs:
   steps:
     - name: "Install dependencies using Poetry"
       run: poetry install --no-interaction
+      shell: bash
 
     - name: "Find Poetry Python environment"
       id: "find"
