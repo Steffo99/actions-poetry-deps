@@ -3,7 +3,7 @@ author: "@Steffo99"
 description: "An action to install Python dependencies using Poetry."
 branding:
   icon: "truck"
-  color: "#008cdb"
+  color: "blue"
   
 outputs:
   pyenv:
