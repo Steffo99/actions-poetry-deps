@@ -7,7 +7,7 @@ branding:
   
 outputs:
   pyenv:
-    description: "The location of the created Python environment."
+    description: "The path to the created Python environment."
     value: ${{ steps.find.outputs.pyenv }}
 
 runs:
