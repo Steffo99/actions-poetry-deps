@@ -2,7 +2,7 @@
 
 Github Action to install Python dependencies via Poetry
 
-## Dependancies
+## Dependencies
 
 This action depends on the Poetry executable being installed and available on the runner where this action is running.
 
