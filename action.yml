@@ -20,5 +20,5 @@ runs:
 
     - name: "Find Poetry Python environment"
       id: "find"
-      run: echo "::set-output name=pyenv::$(poetry env list --full-path | cut -f1 -d' ')/bin"
+      run: echo "pyenv=$(poetry env list --full-path | cut -f1 -d' ')/bin" >> $GITHUB_OUTPUT
       shell: bash
